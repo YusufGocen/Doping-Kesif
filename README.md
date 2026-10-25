@@ -25,7 +25,11 @@ Soru çözmeyi arkadaşla ortak bir hedef etrafında birleştirmek ve öğrencin
 
 ## Ekran görüntüleri
 
-Ekran görüntüleri bu bölüme daha sonra eklenecektir. Görseller için [docs/images](docs/images/README.md) klasörü ayrılmıştır.
+<img width="1896" height="904" alt="ChatGPT Görseli 25 Eki 2026 21_21_08" src="https://github.com/user-attachments/assets/9614b952-57e3-459a-a602-b53b3faaa8ab" />
+<img width="1229" height="908" alt="ChatGPT Görseli 25 Eki 2026 21_21_24" src="https://github.com/user-attachments/assets/c7a721e3-e6f0-4010-88fe-d716bec21c2d" />
+<img width="1237" height="739" alt="ChatGPT Görseli 25 Eki 2026 21_21_36" src="https://github.com/user-attachments/assets/01bcec8f-e2ae-4f04-8d00-567a05b43623" />
+<img width="1228" height="794" alt="ChatGPT Görseli 25 Eki 2026 21_21_43" src="https://github.com/user-attachments/assets/1699b84d-01b5-4e45-aaec-866a07e5ac92" />
+
 
 <!-- Görselleri ekledikten sonra aşağıdaki örnekleri etkinleştirin.
 ![Keşif ana sayfası](docs/images/01-ana-sayfa.png)
@@ -164,13 +168,6 @@ Aynı bilgisayarda iki ayrı tarayıcı veya ayrı tarayıcı profili açın. İ
 
 Yerel JWT yalnız bellekte tutulur. Sayfa yenilendiğinde tekrar giriş gerekir. `localhost` bağlantısı başka bilgisayardan aynı uygulamaya erişim sağlamaz.
 
-### Durdurma
-
-Backend ve frontend terminallerinde `Ctrl+C` kullanın. PostgreSQL’i verisini koruyarak durdurmak için proje kökünde:
-
-```powershell
-docker compose stop postgres
-```
 
 ## Sorular ve içerik
 
@@ -212,13 +209,8 @@ Veritabanı entegrasyon testleri Testcontainers PostgreSQL kullanır. Docker yok
 - [Tarayıcı kabul kontrol listesi](docs/frontend-browser-e2e-status.md)
 - [Geliştirme ilerleme kaydı](ilerleme.md)
 
-Tarih içeren durum raporları ilgili aşamanın kaydıdır. Güncel ürün kapsamı bu README’de özetlenir.
 
-## Mevcut kapsam ve sonraki aşama
 
-Çalışan yerel MVP iki oyunculu uçtan uca oyun akışını içerir. Gerçek Doping kimlik sağlayıcısı, Butik grupları ve soru servisleri henüz bağlı değildir. Demo giriş production derlemesinde kapalıdır.
-
-Üretime geçiş için bu entegrasyonlara ek olarak dağıtım, izleme, yük testleri, içerik kontrolü ve ayrı tarayıcı görsel kabulü tamamlanmalıdır. XP değerleri ve süreler demo ayarlarıdır, onaylanmış kurum politikası değildir. Kaynak kodunu GitHub’a yüklemek uygulamayı internete açmaz.
 
 ## Kullanım ve haklar
 
