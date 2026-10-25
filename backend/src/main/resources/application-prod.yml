@@ -1,0 +1,15 @@
+# Real institution values are required; never fall back to local test identity.
+kesif:
+  security:
+    issuer: ${JWT_ISSUER:}
+    audience: ${JWT_AUDIENCE:}
+    jwk-set-uri: ${JWT_JWKS_URI:}
+  rooms:
+    ttl: ${KESIF_ROOM_TTL:}
+    invitation-ttl: ${KESIF_INVITATION_TTL:}
+    code-secret: ${ROOM_CODE_SECRET:}
+springdoc:
+  api-docs:
+    enabled: false
+  swagger-ui:
+    enabled: false

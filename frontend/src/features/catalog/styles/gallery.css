@@ -1,0 +1,115 @@
+.puzzle-tasks h2 {
+  font-size: 16px;
+  color: #12204c;
+  margin: 0 0 13px;
+}
+.puzzle-task-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+.puzzle-task-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #e1ebf5;
+  border-radius: 9px;
+  background: white;
+  box-shadow: 0 3px 10px #174c7f06;
+}
+.puzzle-task-cover {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+}
+.puzzle-task-body {
+  padding: 10px 8px 8px;
+}
+.puzzle-task-body h3 {
+  font-size: 12px;
+  line-height: 1.4;
+  color: #12204c;
+  margin: 0 0 4px;
+}
+.puzzle-task-count {
+  font-size: 10px;
+  color: #7285a3;
+}
+.puzzle-task-progress {
+  height: 4px;
+  background: #eaf0f8;
+  border-radius: 4px;
+  margin: 7px 0 10px;
+  overflow: hidden;
+}
+.puzzle-task-progress span {
+  display: block;
+  height: 100%;
+  background: var(--color-brand);
+  border-radius: 4px;
+}
+.puzzle-play {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  background: var(--color-brand-soft);
+  color: var(--color-brand);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 9px;
+  border-radius: 5px;
+}
+.puzzle-play:hover {
+  background: var(--color-brand);
+  color: white;
+}
+.puzzle-play:focus-visible {
+  outline: 3px solid #6bb6ff;
+  outline-offset: 2px;
+}
+.gallery-status {
+  font-size: 11px;
+  line-height: 1.8;
+  color: #71839d;
+  margin-top: 12px;
+}
+.puzzle-task-fallback {
+  aspect-ratio: 4/5;
+  display: grid;
+  place-items: center;
+  background: #eef7ff;
+  color: var(--color-brand);
+}
+@media (max-width: 600px) {
+  .puzzle-task-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.puzzle-task-card {
+  position: relative;
+}
+.puzzle-completion-badge {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 8px;
+  background: #f1fff6f2;
+  color: #168254;
+  border: 1px solid #c8e8d4;
+  border-radius: 20px;
+  box-shadow: 0 2px 7px #164a3114;
+  font-size: 9px;
+  font-weight: 800;
+}
+.puzzle-task-card.puzzle-task-complete {
+  border-color: #bedfce;
+}
+.puzzle-task-complete .puzzle-task-progress > span {
+  background: #20a56e;
+}

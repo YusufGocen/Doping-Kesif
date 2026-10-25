@@ -1,0 +1,43 @@
+:root {
+  --font-body: 'Manrope', Arial, sans-serif;
+  --color-brand: #106dd4;
+  --color-brand-hover: #0d5db6;
+  --color-brand-soft: #edf4fc;
+  --color-surface: #ffffff;
+  --color-page: #f6f8fa;
+  --color-text: #263e53;
+  --color-ink: #193149;
+  --color-muted: #8093a5;
+  --color-border: #e9eff4;
+  --color-focus: #77b9ff;
+  --blue: var(--color-brand);
+  --ink: var(--color-ink);
+  --muted: var(--color-muted);
+  --border: var(--color-border);
+  --sidebar: 252px;
+  --right: 294px;
+}
+@media (min-width: 1650px) {
+  :root {
+    --sidebar: 274px;
+    --right: 310px;
+  }
+}
+@media (max-width: 1250px) {
+  :root {
+    --sidebar: 222px;
+    --right: 260px;
+  }
+}
+@media (max-width: 1080px) {
+  :root {
+    --right: 240px;
+    --sidebar: 210px;
+  }
+}
+@media (max-width: 940px) {
+  :root {
+    --sidebar: 222px;
+    --right: 260px;
+  }
+}

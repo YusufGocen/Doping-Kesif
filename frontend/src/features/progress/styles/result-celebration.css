@@ -1,0 +1,795 @@
+﻿.discovery-finale {
+  --finale-gold: #e7ad33;
+  position: relative;
+  isolation: isolate;
+  border-radius: 20px;
+  padding: 0 4px;
+}
+.finale-header {
+  text-align: center;
+  margin: -3px 0 24px;
+}
+.finale-trophy {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 12px;
+  border-radius: 19px;
+  background: #eaf3ff;
+  color: var(--color-brand);
+}
+.is-complete .finale-trophy {
+  color: #b77a12;
+  background: linear-gradient(140deg, #fff3ce, #ffe5a0);
+  box-shadow: 0 5px 18px #e7ad3326;
+}
+.finale-eyebrow {
+  display: block;
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 2px;
+  color: #6e87a4;
+}
+.is-complete .finale-eyebrow {
+  color: #b78424;
+}
+.finale-header h2 {
+  font-size: clamp(26px, 2.6vw, 37px);
+  color: #173d68;
+  margin: 8px 0;
+  letter-spacing: -0.8px;
+}
+.finale-header > p {
+  font-size: 12px;
+  line-height: 1.8;
+  color: #6d84a0;
+  margin: 0;
+}
+.finale-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(270px, 1fr);
+  gap: 24px;
+  align-items: center;
+}
+.finale-showcase {
+  position: relative;
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid #dfeaf5;
+  border-radius: 19px;
+  background: linear-gradient(150deg, #f2f8ff, #fbfdff);
+}
+.is-complete .finale-showcase {
+  border-color: #f0dca8;
+  background: radial-gradient(ellipse at top, #fff3ce80, transparent 70%), #fffdf8;
+}
+.finale-art-title {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 14px;
+  text-align: center;
+}
+.finale-art-title > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 8px;
+  font-weight: 850;
+  letter-spacing: 1px;
+  color: #8c9aaf;
+}
+.is-complete .finale-art-title > span {
+  color: #b58630;
+}
+.progress-screen .finale-art-title h3 {
+  font-size: 18px;
+  margin: 5px 0 0;
+  color: #24476d;
+}
+.finale-puzzle-frame {
+  position: relative;
+  max-width: 560px;
+  margin: auto;
+  border-radius: 13px;
+  box-shadow: 0 8px 22px #173f6c20;
+}
+.finale-puzzle-frame .progress-puzzle {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  aspect-ratio: 7/5;
+  border-radius: 13px;
+}
+.finale-finished-art {
+  aspect-ratio: 7/5;
+  overflow: hidden;
+  border-radius: 13px;
+}
+.finale-finished-art > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.is-complete .finale-puzzle-frame {
+  border: 3px solid #edc25f;
+  box-shadow:
+    0 0 0 5px #fff3d4,
+    0 8px 28px #e0ab3a35;
+  animation: finale-puzzle-bloom 1.5s ease-in-out 2;
+}
+.is-complete .finale-puzzle-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 10px;
+  background: linear-gradient(115deg, transparent 25%, #ffffff90 47%, transparent 68%);
+  background-size: 250% 100%;
+  animation: finale-shine 2s ease-in-out 2;
+}
+.finale-complete-seal {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  padding: 7px 13px;
+  border-radius: 20px;
+  background: #fffbefed;
+  color: #8f6517;
+  border: 1px solid #efd59b;
+  font-size: 10px;
+  font-weight: 850;
+  z-index: 2;
+}
+.finale-completion-track {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 17px;
+  color: #4e6b8a;
+  font-size: 11px;
+}
+.finale-completion-track > span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.finale-completion-track > strong {
+  color: var(--color-brand);
+}
+.finale-completion-track progress {
+  width: 100%;
+  height: 6px;
+  accent-color: var(--color-brand);
+}
+.finale-team-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  color: #dfa734;
+}
+.progress-screen .finale-team-heading h3 {
+  font-size: 15px;
+  text-align: left;
+  color: #24476d;
+  margin: 0;
+}
+.finale-team-heading p {
+  color: #8293a7;
+  font-size: 10px;
+  margin: 5px 0 0;
+}
+.finale-player {
+  padding: 17px;
+  border: 1px solid #e1ebf6;
+  border-radius: 14px;
+  background: #fbfdff;
+  margin-bottom: 12px;
+}
+.finale-player-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.finale-player-heading .user-avatar {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  border-radius: 15px;
+}
+.finale-player-heading strong {
+  display: block;
+  font-size: 13px;
+  color: #24476d;
+}
+.finale-player-heading div > span {
+  display: block;
+  font-size: 10px;
+  color: #8a9aaf;
+  margin-top: 5px;
+}
+.finale-player-heading .finale-xp {
+  margin-left: auto;
+  flex-shrink: 0;
+  padding: 7px 9px;
+  border-radius: 9px;
+  color: #138657;
+  background: #eaf8ef;
+  font-size: 13px;
+  font-weight: 850;
+}
+.finale-player-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 13px;
+  border-top: 1px solid #eaf0f7;
+  margin-top: 13px;
+  padding-top: 10px;
+}
+.finale-player-stats > span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #6d839b;
+  font-size: 10px;
+}
+.finale-player-stats > span:first-child {
+  color: #29966b;
+}
+.finale-team-note {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  padding: 12px;
+  background: var(--color-brand-soft);
+  border-radius: 11px;
+  color: var(--color-brand);
+}
+.finale-team-note > svg {
+  flex-shrink: 0;
+}
+.finale-team-note p {
+  margin: 0;
+  line-height: 1.8;
+  font-size: 11px;
+  color: #5e7b9e;
+}
+.finale-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 26px;
+  padding-top: 21px;
+  border-top: 1px solid #e8eff7;
+}
+.finale-actions > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 11px;
+}
+.finale-actions > .primary {
+  min-width: 210px;
+  min-height: 45px;
+  font-size: 12px;
+}
+.finale-home,
+.finale-collection {
+  color: #587a9f;
+  padding: 8px 0;
+}
+.finale-footnote {
+  text-align: center;
+  font-size: 9px;
+  color: #91a0b3;
+  line-height: 1.7;
+  margin: 15px 0 0;
+}
+.finale-confetti {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  border-radius: 19px;
+}
+.finale-confetti i {
+  position: absolute;
+  left: var(--confetti-x);
+  top: -10px;
+  width: 6px;
+  height: 10px;
+  background: #f6bb43;
+  border-radius: 2px;
+  animation: finale-confetti 2.7s ease-out var(--confetti-delay) both;
+}
+.finale-confetti i:nth-child(3n) {
+  background: #62b4ed;
+}
+.finale-confetti i:nth-child(3n + 1) {
+  background: #69c6ad;
+}
+@keyframes finale-puzzle-bloom {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.025);
+    box-shadow:
+      0 0 0 6px #fff0bf,
+      0 0 32px #e7ad3360;
+  }
+}
+@keyframes finale-shine {
+  from {
+    background-position: 180% 0;
+    opacity: 0;
+  }
+  20%,
+  70% {
+    opacity: 1;
+  }
+  to {
+    background-position: -80% 0;
+    opacity: 0;
+  }
+}
+@keyframes finale-confetti {
+  0% {
+    transform: translateY(0) rotate(var(--confetti-rotation));
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(380px) rotate(calc(var(--confetti-rotation) + 180deg));
+    opacity: 0;
+  }
+}
+@media (max-width: 1150px) {
+  .finale-content {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .finale-puzzle-frame {
+    max-width: 520px;
+  }
+  .finale-team {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .finale-team-heading,
+  .finale-team-note {
+    grid-column: 1/-1;
+  }
+  .finale-player {
+    margin: 0;
+    padding: 12px;
+  }
+  .finale-player-heading {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .finale-player-heading .finale-xp {
+    margin-left: 0;
+  }
+}
+@media (max-width: 600px) {
+  .finale-team {
+    grid-template-columns: 1fr;
+  }
+  .finale-player-heading .finale-xp {
+    margin-left: auto;
+  }
+  .finale-showcase {
+    padding: 15px;
+  }
+  .finale-actions {
+    gap: 12px;
+  }
+  .finale-actions > .primary {
+    width: 100%;
+    order: -1;
+  }
+  .finale-header {
+    margin-bottom: 18px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .is-complete .finale-puzzle-frame,
+  .is-complete .finale-puzzle-frame::after,
+  .finale-confetti i {
+    animation: none;
+  }
+  .finale-puzzle-frame::after,
+  .finale-confetti {
+    display: none;
+  }
+}
+
+/* Full-width puzzle showcase, with both explorers underneath. */
+.discovery-finale .finale-content {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 22px;
+}
+.discovery-finale .finale-puzzle-frame {
+  width: 100%;
+  max-width: none;
+}
+.discovery-finale .finale-finished-art,
+.discovery-finale .finale-puzzle-frame .progress-puzzle {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  max-width: none;
+}
+.discovery-finale .finale-team {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.discovery-finale .finale-team-heading,
+.discovery-finale .finale-team-note {
+  grid-column: 1 / -1;
+}
+.discovery-finale .finale-team-heading {
+  margin-bottom: 0;
+}
+.discovery-finale .finale-player {
+  margin-bottom: 0;
+  padding: 17px;
+}
+.discovery-finale .finale-player-heading {
+  flex-wrap: nowrap;
+  gap: 12px;
+}
+.discovery-finale .finale-player-heading .finale-xp {
+  margin-left: auto;
+}
+@media (max-width: 600px) {
+  .discovery-finale .finale-team {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .discovery-finale .finale-finished-art,
+  .discovery-finale .finale-puzzle-frame .progress-puzzle {
+    aspect-ratio: 7 / 5;
+  }
+  .discovery-finale .finale-player {
+    padding: 12px;
+  }
+}
+
+.discovery-finale .finale-showcase {
+  width: 94%;
+  justify-self: center;
+}
+@media (max-width: 600px) {
+  .discovery-finale .finale-showcase {
+    width: 100%;
+  }
+}
+
+/* Start the achievement effect after the finished picture has loaded. */
+.is-complete .finale-puzzle-frame,
+.is-complete .finale-puzzle-frame::after {
+  animation: none;
+}
+.is-complete .finale-puzzle-frame {
+  isolation: isolate;
+}
+.is-complete .finale-puzzle-frame::after {
+  opacity: 0;
+}
+.is-complete .finale-puzzle-frame.celebration-ready {
+  animation: finale-achievement-arrival 1600ms ease-out both;
+}
+.is-complete .finale-puzzle-frame.celebration-ready::before {
+  content: '';
+  position: absolute;
+  inset: -9px;
+  z-index: -1;
+  pointer-events: none;
+  border: 2px solid #f7d47e;
+  border-radius: 21px;
+  box-shadow:
+    0 0 22px rgb(var(--achievement-rgb) / 0.5),
+    0 0 48px rgb(var(--achievement-rgb) / 0.25);
+  animation: finale-golden-aura 3800ms ease-in-out infinite;
+}
+.is-complete .finale-puzzle-frame.celebration-ready::after {
+  z-index: 2;
+  background: linear-gradient(
+    110deg,
+    transparent 32%,
+    #fff6ce25 41%,
+    #ffffffba 49%,
+    #fff6ce25 57%,
+    transparent 66%
+  );
+  background-size: 300% 100%;
+  animation: finale-victory-sweep 4800ms ease-in-out infinite;
+}
+.celebration-ready .finale-complete-seal {
+  animation: finale-seal-arrival 800ms ease-out 450ms both;
+}
+.finale-art-glints {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+.finale-art-glints > svg {
+  position: absolute;
+  color: #fff1a9;
+  fill: #fff6c9;
+  filter: drop-shadow(0 0 7px #f5bb3f);
+  width: 30px;
+  height: 30px;
+  animation: finale-star-glint 3s ease-in-out infinite;
+}
+.finale-art-glints > svg:nth-child(1) {
+  top: 6%;
+  left: 5%;
+}
+.finale-art-glints > svg:nth-child(2) {
+  top: 15%;
+  right: 4%;
+  animation-delay: 0.8s;
+  width: 23px;
+}
+.finale-art-glints > svg:nth-child(3) {
+  bottom: 12%;
+  left: 12%;
+  animation-delay: 1.4s;
+  width: 22px;
+}
+.finale-art-glints > svg:nth-child(4) {
+  bottom: 6%;
+  right: 9%;
+  animation-delay: 2s;
+}
+@keyframes finale-achievement-arrival {
+  0% {
+    transform: scale(0.96);
+    filter: brightness(0.9);
+  }
+  45% {
+    transform: scale(1.035);
+    filter: brightness(1.12);
+  }
+  75% {
+    transform: scale(0.995);
+    filter: brightness(1.02);
+  }
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+@keyframes finale-golden-aura {
+  0%,
+  100% {
+    opacity: 0.45;
+    box-shadow:
+      0 0 15px rgb(var(--achievement-rgb) / 0.38),
+      0 0 28px rgb(var(--achievement-rgb) / 0.19);
+  }
+  50% {
+    opacity: 1;
+    box-shadow:
+      0 0 30px rgb(var(--achievement-rgb) / 0.63),
+      0 0 58px rgb(var(--achievement-rgb) / 0.31);
+  }
+}
+@keyframes finale-victory-sweep {
+  0%,
+  10% {
+    background-position: 150% 0;
+    opacity: 0;
+  }
+  18%,
+  42% {
+    opacity: 0.8;
+  }
+  52%,
+  100% {
+    background-position: -50% 0;
+    opacity: 0;
+  }
+}
+@keyframes finale-star-glint {
+  0%,
+  100% {
+    opacity: 0.1;
+    transform: scale(0.55) rotate(-12deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15) rotate(12deg);
+  }
+}
+@keyframes finale-seal-arrival {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .is-complete .finale-puzzle-frame.celebration-ready,
+  .is-complete .finale-puzzle-frame.celebration-ready::before,
+  .is-complete .finale-puzzle-frame.celebration-ready::after,
+  .celebration-ready .finale-complete-seal,
+  .finale-art-glints > svg {
+    animation: none;
+  }
+  .is-complete .finale-puzzle-frame.celebration-ready::after,
+  .finale-art-glints {
+    display: none;
+  }
+}
+
+.finale-compact-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 14px;
+  margin-top: 22px;
+  border: 0;
+  border-radius: 13px;
+  background: transparent;
+}
+.finale-compact-actions > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 43px;
+  padding: 10px 17px;
+  font-size: 11px;
+  font-weight: 750;
+  line-height: 1.5;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 1px solid #d6e6f8;
+  background: linear-gradient(135deg, #f3f8ff, #e7f1fc);
+  color: #315e90;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+.finale-compact-actions > a > svg {
+  flex-shrink: 0;
+}
+.finale-compact-actions > .finale-compact-play {
+  background: linear-gradient(120deg, #7051d8, #5433b5);
+  border-color: #6240c5;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-shadow:
+    0 4px 10px #6545c52b,
+    inset 0 1px 0 #ffffff24;
+}
+.finale-compact-actions > .finale-compact-collection {
+  color: #187c60;
+  background: linear-gradient(135deg, #edf9f3, #def2e8);
+  border-color: #cce6d9;
+}
+.finale-compact-actions > a:hover {
+  border-color: #a9c6e5;
+  box-shadow: 0 3px 8px #285e8c0d;
+}
+.finale-compact-actions > .finale-compact-play:hover {
+  background: #5433b5;
+  border-color: #5433b5;
+}
+.finale-compact-actions > a:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+@media (max-width: 600px) {
+  .finale-compact-actions {
+    gap: 8px;
+    padding: 10px;
+  }
+  .finale-compact-actions > .finale-compact-play {
+    order: -1;
+    width: 100%;
+  }
+  .finale-compact-actions > a {
+    flex-grow: 1;
+    padding: 9px 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .finale-compact-actions > a {
+    transition: none;
+  }
+}
+
+/* Completion surfaces follow the discovered world, rather than always gold. */
+.discovery-finale {
+  --achievement-rgb: 16 109 212;
+  --achievement-accent: #397dc7;
+  --achievement-ink: #326594;
+  --achievement-tint: #edf5ff;
+  --achievement-border: #c5dcf5;
+}
+.discovery-finale[data-theme='world'] {
+  --achievement-rgb: 231 173 51;
+  --achievement-accent: #dfac42;
+  --achievement-ink: #936b1e;
+  --achievement-tint: #fff7e4;
+  --achievement-border: #efdaad;
+}
+.discovery-finale[data-theme='history'] {
+  --achievement-rgb: 207 139 63;
+  --achievement-accent: #ce914c;
+  --achievement-ink: #97602e;
+  --achievement-tint: #fff4e8;
+  --achievement-border: #eed7bc;
+}
+.discovery-finale[data-theme='nature'] {
+  --achievement-rgb: 39 164 172;
+  --achievement-accent: #31a7af;
+  --achievement-ink: #237c83;
+  --achievement-tint: #eafaf8;
+  --achievement-border: #bfe7e3;
+}
+.discovery-finale[data-theme='city'] {
+  --achievement-rgb: 139 109 216;
+  --achievement-accent: #9779d6;
+  --achievement-ink: #70539e;
+  --achievement-tint: #f5efff;
+  --achievement-border: #dfd1f4;
+}
+.discovery-finale.is-complete .finale-showcase {
+  border-color: var(--achievement-border);
+  background: linear-gradient(145deg, var(--achievement-tint), #ffffff);
+}
+.discovery-finale.is-complete .finale-trophy {
+  color: var(--achievement-ink);
+  background: var(--achievement-tint);
+  box-shadow: 0 5px 18px rgb(var(--achievement-rgb) / 0.15);
+}
+.discovery-finale.is-complete .finale-eyebrow,
+.discovery-finale.is-complete .finale-art-title > span {
+  color: var(--achievement-ink);
+}
+.discovery-finale.is-complete .finale-puzzle-frame {
+  border-color: var(--achievement-accent);
+  box-shadow:
+    0 0 0 5px var(--achievement-tint),
+    0 8px 28px rgb(var(--achievement-rgb) / 0.22);
+}
+.discovery-finale.is-complete .finale-puzzle-frame.celebration-ready::before {
+  border-color: var(--achievement-border);
+}
+.discovery-finale .finale-complete-seal {
+  color: var(--achievement-ink);
+  background: var(--achievement-tint);
+  border-color: var(--achievement-border);
+}
+.discovery-finale .finale-art-glints > svg {
+  color: var(--achievement-tint);
+  fill: var(--achievement-tint);
+  filter: drop-shadow(0 0 7px rgb(var(--achievement-rgb) / 0.8));
+}

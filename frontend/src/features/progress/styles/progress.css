@@ -1,0 +1,258 @@
+.progress-screen {
+  color: #17274f;
+}
+.progress-screen h1 {
+  font-size: 23px;
+  margin: 0 0 22px;
+}
+.progress-screen h3 {
+  text-align: center;
+  font-size: 15px;
+}
+.result-celebration {
+  text-align: center;
+}
+.result-celebration > span {
+  font-size: 38px;
+}
+.result-celebration h2 {
+  margin: 10px 0 6px;
+  font-size: 25px;
+}
+.result-celebration p {
+  font-size: 12px;
+  color: #7185a0;
+}
+.progress-puzzle {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  aspect-ratio: 5/4;
+  max-width: 390px;
+  margin: 22px auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.progress-puzzle > span {
+  display: grid;
+  place-items: center;
+  background-color: #29345f;
+  background-size: 500% 400%;
+  border: 1px solid #ffffff22;
+  font-size: 15px;
+}
+.progress-puzzle > span:not(.open) {
+  background-image: none !important;
+}
+.result-player-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 22px 0;
+}
+.result-player-grid article {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 7px 12px;
+  background: #f7faff;
+  border: 1px solid #e2ebf6;
+  padding: 15px;
+  border-radius: 9px;
+  font-size: 12px;
+}
+.result-player-grid .user-avatar {
+  width: 45px;
+  height: 45px;
+  grid-row: span 3;
+}
+.result-player-grid b {
+  color: #179750;
+}
+.result-player-grid small {
+  grid-column: 1/-1;
+  color: #7388a0;
+}
+.progress-stats {
+  display: flex;
+  gap: 12px;
+  margin: 22px 0;
+}
+.progress-stats > div {
+  flex: 1;
+  text-align: center;
+  background: #f6f9fe;
+  border: 1px solid #e3ecf6;
+  border-radius: 8px;
+  padding: 17px 8px;
+}
+.progress-stats strong {
+  display: block;
+  color: var(--color-brand);
+  font-size: 21px;
+}
+.progress-stats span {
+  display: block;
+  font-size: 10px;
+  color: #7286a0;
+  margin-top: 8px;
+}
+.progress-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 25px 0;
+  font-size: 12px;
+}
+.progress-footnote {
+  font-size: 11px;
+  line-height: 1.8;
+  color: #6b8099;
+  text-align: center;
+}
+.progress-notice {
+  padding: 12px;
+  background: #f5f8fe;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.progress-tabs,
+.progress-filters {
+  display: flex;
+  gap: 16px;
+  margin: 20px 0;
+}
+.progress-tabs {
+  border-bottom: 1px solid #e0eaf4;
+}
+.progress-tabs button {
+  padding: 10px 0;
+  font-size: 12px;
+  color: #667f9d;
+}
+.progress-tabs button[aria-pressed='true'] {
+  color: var(--color-brand);
+  border-bottom: 2px solid var(--color-brand);
+}
+.progress-filters {
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.progress-filters button {
+  padding: 8px 14px;
+  border-radius: 18px;
+  background: #f3f6fc;
+  color: #667f9d;
+  font-size: 11px;
+}
+.progress-filters button[aria-pressed='true'] {
+  color: white;
+  background: var(--color-brand);
+}
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+.collection-card {
+  border: 1px solid #e0eaf5;
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #15274f;
+  padding-bottom: 12px;
+}
+.collection-card img,
+.collection-cover-fallback {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+}
+.collection-cover-fallback {
+  display: grid;
+  place-items: center;
+  background: #eef5fe;
+}
+.collection-card strong,
+.collection-card span {
+  padding: 0 10px;
+  font-size: 12px;
+  margin-top: 9px;
+}
+.collection-card span {
+  font-size: 10px;
+  color: #6c85a2;
+}
+.collection-card progress {
+  margin: 10px 10px 0;
+  width: calc(100% - 20px);
+  height: 5px;
+  accent-color: var(--color-brand);
+}
+.progress-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin: 24px 0;
+  font-size: 12px;
+}
+.history-list {
+  display: grid;
+  gap: 10px;
+}
+.history-list > a {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  border: 1px solid #e4ecf6;
+  border-radius: 8px;
+  padding: 15px;
+  color: #243b60;
+  text-decoration: none;
+  font-size: 12px;
+}
+.history-list span,
+.history-list small,
+.history-list time {
+  display: block;
+  font-size: 10px;
+  color: #7387a1;
+  margin-top: 6px;
+}
+.history-list b {
+  color: #19955d;
+  white-space: nowrap;
+}
+.collection-detail-count {
+  text-align: center;
+  font-weight: 700;
+}
+.progress-screen > .primary {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+.progress-screen > .settings-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+}
+@media (max-width: 600px) {
+  .collection-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .result-player-grid {
+    grid-template-columns: 1fr;
+  }
+  .progress-stats strong {
+    font-size: 17px;
+  }
+  .history-list > a {
+    padding: 12px;
+  }
+}

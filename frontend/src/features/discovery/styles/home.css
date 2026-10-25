@@ -1,0 +1,157 @@
+.reference-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #10204c;
+  margin-bottom: 16px;
+}
+.reference-heading h1 {
+  font-size: 21px;
+  margin: 0;
+}
+.reference-heading > svg {
+  color: var(--color-brand);
+}
+.discovery-banner {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #f1f9ff;
+}
+.discovery-banner > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.discovery-banner-copy {
+  position: absolute;
+  inset: 15% 28% 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #0b1954;
+}
+.discovery-banner-copy h2 {
+  font-size: clamp(22px, 2.7vw, 45px);
+  line-height: 1.02;
+  margin: 0 0 10px;
+  font-weight: 850;
+}
+.discovery-banner-copy strong {
+  font-size: clamp(8px, 0.9vw, 14px);
+}
+.discovery-banner-copy p {
+  font-size: clamp(7px, 0.75vw, 11px);
+  margin: 6px 0;
+}
+.discovery-facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+  margin: 14px 0 24px;
+}
+.discovery-fact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 5px;
+  border: 1px solid #e3edf6;
+  border-radius: 7px;
+  background: #fbfdff;
+  font-size: 10px;
+  color: #172957;
+}
+.discovery-fact svg {
+  width: 20px;
+  height: 20px;
+  color: var(--color-brand);
+}
+.development-tools {
+  margin-top: 24px;
+  border-top: 1px solid #e4edf5;
+  padding-top: 14px;
+}
+.development-tools summary {
+  cursor: pointer;
+  font-size: 11px;
+  color: #637b92;
+}
+.settings-stepper {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  background: #f7f9fd;
+  padding: 18px;
+  margin: 0 0 20px;
+  border-radius: 8px;
+  font-size: 12px;
+  color: #8d98ad;
+}
+.settings-stepper [aria-current] {
+  color: var(--color-brand);
+  font-weight: 750;
+}
+.settings-back {
+  display: inline-block;
+  margin-top: 22px;
+  color: var(--color-brand);
+  font-size: 12px;
+}
+.settings-puzzle {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #15264f;
+}
+.settings-puzzle img {
+  width: 58px;
+  height: 58px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.settings-puzzle p {
+  font-size: 11px;
+  color: #627d96;
+}
+.game-settings {
+  margin: 20px 0;
+}
+@media (max-width: 600px) {
+  .discovery-facts {
+    gap: 5px;
+  }
+  .discovery-fact {
+    flex-direction: column;
+    font-size: 8px;
+    padding: 10px 3px;
+  }
+  .discovery-banner-copy h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  .discovery-banner-copy p {
+    display: none;
+  }
+}
+
+.discovery-help {
+  float: right;
+  border: 1px solid #deebf7;
+  background: white;
+  color: var(--color-brand);
+  border-radius: 6px;
+  padding: 7px 10px;
+  font-size: 10px;
+}
+.discovery-fact.amber svg {
+  color: #eaa517;
+}
+.discovery-fact.mint svg {
+  color: #20b285;
+}
+.discovery-fact.violet svg {
+  color: #7264e7;
+}

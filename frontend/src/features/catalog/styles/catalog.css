@@ -1,0 +1,501 @@
+.catalog-explorer {
+  margin-top: 28px;
+  padding-top: 26px;
+  border-top: 1px solid var(--color-border);
+}
+.catalog-explorer > .section-heading {
+  color: var(--color-brand);
+}
+.catalog-fieldset {
+  border: 0;
+  padding: 0;
+  margin: 22px 0;
+  min-width: 0;
+}
+.catalog-fieldset legend {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: var(--color-ink);
+  padding: 0;
+}
+.catalog-message {
+  font-size: 11px;
+  line-height: 1.8;
+  color: var(--color-muted);
+  padding: 9px 0;
+}
+.catalog-message > .text-button {
+  display: inline-flex;
+}
+.puzzle-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 11px;
+}
+.puzzle-choice {
+  position: relative;
+  display: block;
+  border: 2px solid transparent;
+  border-radius: 11px;
+  padding: 3px;
+  background: #f4f7fa;
+  cursor: pointer;
+  min-width: 0;
+  transition: border-color 0.15s;
+}
+.puzzle-choice:focus-within {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+.puzzle-choice.selected {
+  border-color: var(--color-brand);
+  background: var(--color-brand-soft);
+}
+.puzzle-choice > input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+.puzzle-choice > svg {
+  width: 100%;
+  display: block;
+  border-radius: 7px;
+}
+.puzzle-choice-copy {
+  display: block;
+  padding: 10px 6px;
+}
+.puzzle-choice-copy strong {
+  display: block;
+  font-size: 10px;
+  color: #354f67;
+  line-height: 1.5;
+}
+.puzzle-choice-copy > span {
+  display: block;
+  font-size: 9px;
+  color: #8a9eb0;
+  margin-top: 4px;
+}
+.choice-check {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  background: var(--color-brand);
+  color: white;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+.grade-choices {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.grade-choices > button,
+.subject-choices > button {
+  padding: 13px 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: #f8fafc;
+  font-size: 11px;
+  font-weight: 700;
+  color: #607b91;
+  min-width: 0;
+}
+.grade-choices > button[aria-pressed='true'],
+.subject-choices > button[aria-pressed='true'] {
+  border-color: var(--color-brand);
+  background: var(--color-brand-soft);
+  color: var(--color-brand);
+}
+.grade-choices small,
+.subject-choices small {
+  display: block;
+  font-size: 8px;
+  font-weight: 500;
+  margin-top: 4px;
+}
+.grade-choices > button:disabled,
+.subject-choices > button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.subject-choices {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+}
+.subject-choices > button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 85px;
+  background: white;
+  font-size: 10px;
+  line-height: 1.6;
+}
+.subject-choices > button > svg {
+  color: #6d9fcb;
+}
+.catalog-topic label {
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: var(--color-ink);
+}
+.catalog-topic label > span {
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--color-muted);
+  margin-left: 6px;
+}
+.catalog-topic select {
+  font: inherit;
+  font-size: 12px;
+  color: #58748d;
+  background: #f7fafc;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  width: 100%;
+  padding: 13px;
+}
+.selection-summary {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 23px;
+  padding: 17px;
+  border: 1px solid #cce8dc;
+  background: #effaf5;
+  border-radius: 10px;
+  color: #31866c;
+  font-size: 12px;
+}
+.selection-summary p {
+  font-size: 10px;
+  margin-top: 5px;
+  line-height: 1.8;
+}
+.selection-summary small {
+  display: block;
+  font-size: 9px;
+  margin-top: 5px;
+  color: #74a38f;
+}
+.catalog-gate {
+  margin-top: 22px;
+  padding: 18px;
+  background: #f5f9fd;
+  border: 1px solid var(--color-border);
+  border-radius: 9px;
+  color: #7290a9;
+  font-size: 11px;
+  line-height: 1.8;
+}
+@media (max-width: 1080px) {
+  .puzzle-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .subject-choices {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 480px) {
+  .grade-choices {
+    gap: 6px;
+  }
+  .grade-choices > button {
+    font-size: 10px;
+    padding: 12px 4px;
+  }
+  .catalog-explorer {
+    padding-top: 22px;
+  }
+  .puzzle-choice-copy strong {
+    font-size: 11px;
+  }
+}
+
+/* Vivid subject tiles, following the Doping settings reference. */
+.game-settings .catalog-fieldset legend {
+  font-size: 13px;
+  color: #14264c;
+}
+.game-settings .grade-choices > button {
+  min-height: 48px;
+  background: #f2f6fb;
+  color: #263b5b;
+  border-color: #e3edf7;
+}
+.game-settings .subject-choices > button {
+  min-height: 96px;
+  border-color: #e0eaf5;
+  color: #263b5b;
+  background: linear-gradient(155deg, #fff, #f8fbff);
+  transition:
+    border-color 0.18s,
+    box-shadow 0.18s,
+    background 0.18s;
+}
+.game-settings .subject-choices > button:hover:not(:disabled),
+.game-settings .grade-choices > button:hover:not(:disabled) {
+  border-color: #73b7ff;
+  box-shadow: 0 3px 12px color-mix(in srgb, var(--color-brand) 7%, transparent);
+}
+.game-settings .subject-choices > button[aria-pressed='true'],
+.game-settings .grade-choices > button[aria-pressed='true'] {
+  border-color: var(--color-brand);
+  background: linear-gradient(140deg, var(--color-brand-soft), #dcefff);
+  box-shadow:
+    0 0 0 1px var(--color-brand),
+    inset 0 0 0 3px #ffffffb3;
+  color: var(--color-brand);
+}
+.subject-symbol {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  color: #1586ee;
+}
+.subject-symbol.math {
+  color: #6151ff;
+}
+.subject-symbol.turkish {
+  color: #ff9c00;
+}
+.subject-symbol.science {
+  color: #13bd64;
+}
+.subject-symbol.history {
+  color: #fa426a;
+}
+.subject-symbol.english {
+  color: white;
+  background: #ed35ac;
+  border-radius: 8px;
+  width: 29px;
+  height: 29px;
+  margin: 3.5px;
+}
+.subject-symbol.english svg {
+  width: 23px;
+}
+.subject-symbol.religion {
+  color: #087df1;
+}
+.subject-symbol.religion svg {
+  fill: #087df1;
+}
+.subject-symbol.art {
+  color: #ff9b00;
+}
+.subject-symbol.technology {
+  color: #009bff;
+}
+.subject-symbol.social {
+  color: #11a8a1;
+}
+.game-settings .catalog-topic {
+  display: grid;
+  grid-template-columns: minmax(130px, 1fr) minmax(0, 1.4fr);
+  align-items: center;
+  gap: 10px;
+}
+.game-settings .catalog-topic label {
+  margin-bottom: 0;
+}
+.game-settings .catalog-topic select {
+  background: #f1f7fd;
+  border-color: #dce9f6;
+  color: #29436a;
+}
+.game-settings .catalog-topic .catalog-message {
+  grid-column: 1 / -1;
+}
+.game-settings .settings-continue {
+  background: var(--color-brand);
+  box-shadow: 0 5px 14px color-mix(in srgb, var(--color-brand) 14%, transparent);
+  min-height: 48px;
+  border-radius: 7px;
+  font-size: 13px;
+}
+.game-settings .settings-continue:disabled {
+  box-shadow: none;
+}
+.settings-stepper li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.settings-step-number {
+  display: grid;
+  place-items: center;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  background: #e5edf6;
+  color: #6b809a;
+}
+.settings-stepper [aria-current='step'] .settings-step-number {
+  background: var(--color-brand);
+  color: white;
+  box-shadow: 0 3px 8px color-mix(in srgb, var(--color-brand) 15%, transparent);
+}
+.settings-stepper .settings-step-arrow {
+  color: #bdcfe1;
+}
+@media (max-width: 480px) {
+  .game-settings .catalog-topic {
+    grid-template-columns: 1fr;
+  }
+  .settings-stepper {
+    padding: 12px 5px;
+  }
+  .settings-stepper li {
+    gap: 4px;
+    font-size: 10px;
+  }
+}
+.game-settings .subject-choices {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+@media (max-width: 600px) {
+  .game-settings .subject-choices {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.settings-title-badge {
+  display: grid;
+  place-items: center;
+  flex: 0 0 28px;
+  min-width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  color: white;
+  background: var(--color-brand);
+  font-size: 15px;
+  line-height: 1;
+}
+.game-settings .settings-mission-card {
+  display: grid;
+  grid-template-columns: 124px minmax(0, 1fr);
+  align-items: center;
+  gap: 20px;
+  padding: 16px;
+  border: 1px solid #d6e8fa;
+  border-radius: 16px;
+  background: linear-gradient(115deg, #edf7ff, #f6faff 65%, #f1f0ff);
+  box-shadow: 0 5px 18px #1b65ac08;
+}
+.game-settings .settings-mission-card img {
+  width: 124px;
+  height: 124px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 3px solid white;
+  box-shadow: 0 4px 12px #24466c1a;
+}
+.settings-mission-label {
+  display: block;
+  color: #4879ae;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  margin-bottom: 7px;
+}
+.game-settings .settings-mission-card strong {
+  display: block;
+  font-size: 21px;
+  line-height: 1.25;
+  color: #153963;
+}
+.game-settings .settings-mission-card p {
+  font-size: 12px;
+  line-height: 1.65;
+  color: #52708e;
+  margin: 8px 0 12px;
+  max-width: 380px;
+}
+.settings-mission-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.settings-mission-facts > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 8px;
+  background: #ffffffd9;
+  color: #2168b5;
+  border: 1px solid #dfebf7;
+  border-radius: 7px;
+  font-size: 10px;
+  font-weight: 700;
+}
+@media (max-width: 480px) {
+  .game-settings .settings-mission-card {
+    grid-template-columns: 84px minmax(0, 1fr);
+    gap: 12px;
+    padding: 12px;
+  }
+  .game-settings .settings-mission-card img {
+    width: 84px;
+    height: 108px;
+  }
+  .game-settings .settings-mission-card strong {
+    font-size: 18px;
+  }
+  .game-settings .settings-mission-card p {
+    font-size: 11px;
+  }
+}
+
+.game-settings .catalog-topic label {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 7px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.game-settings .catalog-topic label > span {
+  display: inline;
+  margin: 0;
+  font-size: 12px;
+  color: #617791;
+}
+.game-settings .catalog-topic select {
+  min-height: 44px;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+.settings-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.settings-back > svg {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+}

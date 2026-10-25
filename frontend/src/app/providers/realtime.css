@@ -1,0 +1,33 @@
+.realtime-status {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  z-index: 35;
+  max-width: min(320px, calc(100vw - 24px));
+  border: 1px solid #deebf2;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px #18334d0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #f1f7fd;
+  color: #577795;
+  font-size: 10px;
+  padding: 4px 9px;
+  min-height: 24px;
+  flex-wrap: wrap;
+}
+.realtime-status.live {
+  color: #23805a;
+  background: #f1faf5;
+}
+.realtime-status.offline,
+.realtime-status.denied {
+  background: #fff7e8;
+  color: #a36c24;
+}
+.realtime-status .text-button {
+  font-size: 11px;
+  padding: 0 5px;
+}

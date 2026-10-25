@@ -1,0 +1,195 @@
+.login-screen {
+  height: 100dvh;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  padding: 10px;
+  gap: clamp(24px, 7vw, 135px);
+  background: #f8f9fb;
+  color: #304659;
+  overflow: hidden;
+}
+.login-story {
+  min-height: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  background: white;
+}
+.login-platform-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.login-welcome {
+  min-height: 0;
+  padding: clamp(18px, 7vh, 75px) clamp(16px, 4vw, 80px) 16px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.login-mark {
+  width: clamp(48px, 8vh, 80px);
+  height: clamp(48px, 8vh, 80px);
+  border-radius: 18px;
+  background: white;
+  display: grid;
+  place-items: center;
+  margin-bottom: clamp(10px, 2vh, 22px);
+  flex-shrink: 0;
+}
+.login-mark .brand > span {
+  display: none;
+}
+.login-mark .brand svg {
+  width: 40px;
+  height: 48px;
+}
+.login-welcome h1 {
+  font-size: clamp(24px, 3.8vh, 34px);
+  line-height: 1.2;
+  margin: 0 0 5px;
+  color: #304659;
+}
+.login-subtitle {
+  font-size: clamp(19px, 2vw, 32px);
+  line-height: 1.3;
+  margin: 0 0 12px;
+}
+.login-instruction {
+  font-size: 13px;
+  color: #6f869d;
+  margin: 0 0 clamp(10px, 2.5vh, 26px);
+}
+.login-accounts {
+  width: 100%;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.login-account-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, clamp(75px, 15vh, 140px)));
+  gap: clamp(12px, 2.5vh, 26px) 24px;
+}
+.login-account-card.text-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  text-align: center;
+  color: #304659;
+  border-radius: 15px;
+  white-space: normal;
+}
+.login-avatar {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 17px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
+}
+.login-avatar .user-avatar {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.login-account-card:hover .login-avatar {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px #1c5a9420;
+}
+.login-account-card:focus-visible {
+  outline: 3px solid #348fe3;
+  outline-offset: 4px;
+}
+.login-account-card strong {
+  font-size: 13px;
+  line-height: 1.3;
+}
+.login-account-card:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+.login-welcome footer {
+  font-size: 10px;
+  color: #7891aa;
+  margin-top: auto;
+  padding-top: 14px;
+}
+.login-accounts [role='alert'] {
+  color: #b42c43;
+}
+@media (max-width: 700px) {
+  .login-screen {
+    grid-template-columns: 1fr;
+    padding: 0;
+    gap: 0;
+  }
+  .login-story {
+    display: none;
+  }
+  .login-welcome {
+    height: 100dvh;
+    padding: clamp(16px, 4vh, 36px) 24px 16px;
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+  }
+  .login-account-grid {
+    grid-template-columns: repeat(2, minmax(0, clamp(75px, 17vh, 140px)));
+    gap: clamp(12px, 3vh, 24px) 24px;
+  }
+  .login-subtitle {
+    font-size: 25px;
+  }
+}
+@media (max-height: 500px) {
+  .login-welcome {
+    padding-top: 10px;
+  }
+  .login-mark {
+    display: none;
+  }
+  .login-account-grid {
+    grid-template-columns: repeat(4, minmax(0, 85px));
+    gap: 12px;
+  }
+  .login-subtitle {
+    margin-bottom: 6px;
+  }
+  .login-instruction {
+    margin-bottom: 10px;
+  }
+  .login-welcome footer {
+    padding-top: 8px;
+  }
+}
+
+/* Four accounts remain in a single row, including narrow screens. */
+.login-account-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 100%;
+  max-width: 600px;
+  gap: clamp(8px, 1.2vw, 20px);
+}
+.login-account-card {
+  min-width: 0;
+}
+.login-avatar {
+  max-width: min(130px, 18vh);
+}
+.login-account-card strong {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 700px) {
+  .login-account-grid {
+    gap: 10px;
+  }
+  .login-account-card strong {
+    font-size: 11px;
+  }
+}

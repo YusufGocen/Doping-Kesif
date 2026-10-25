@@ -1,0 +1,40 @@
+spring:
+  config:
+    activate:
+      on-profile: "local & !prod"
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/doping_kesif}
+    username: ${POSTGRES_USER:kesif_local}
+    password: ${POSTGRES_PASSWORD}
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+server:
+  address: 127.0.0.1
+kesif:
+  rewards:
+    # Demo assumptions, not approved product rules.
+    enabled: ${KESIF_REWARDS_ENABLED:true}
+    completion-xp: ${KESIF_COMPLETION_XP:10}
+    correct-answer-xp: ${KESIF_CORRECT_ANSWER_XP:2}
+    collection-completion-xp: ${KESIF_COLLECTION_COMPLETION_XP:50}
+    collection-mapping: ${KESIF_COLLECTION_MAPPING:SHARED_UNION}
+  game:
+    # Provisional demo timings; production requires explicit values.
+    question-duration: ${KESIF_QUESTION_DURATION:PT30S}
+    reveal-duration: ${KESIF_REVEAL_DURATION:PT10S}
+  security:
+    issuer: http://localhost:8080/kesif-local
+    audience: doping-kesif-local
+  local:
+    seed-enabled: true
+    token-ttl: PT15M
+  web:
+    allowed-origins: http://localhost:5173,http://127.0.0.1:5173
+  rooms:
+    # Provisional local demo values, not approved product timing rules.
+    ttl: ${KESIF_ROOM_TTL:PT5M}
+    invitation-ttl: ${KESIF_INVITATION_TTL:PT2M}
+    code-secret: ${ROOM_CODE_SECRET:}

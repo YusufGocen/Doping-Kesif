@@ -1,0 +1,993 @@
+.app {
+  min-height: 100vh;
+}
+.sidebar {
+  width: var(--sidebar);
+  height: 100dvh;
+  position: fixed;
+  inset: 0 auto 0 0;
+  background: var(--color-surface);
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #f0f3f6;
+}
+.brand-row {
+  padding: 33px 23px 30px;
+  min-height: 112px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navigation {
+  padding: 8px 13px 20px;
+  overflow: auto;
+  scrollbar-width: thin;
+  flex: 1;
+}
+.nav-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  text-align: left;
+  border-radius: 8px;
+  padding: 8px 10px;
+  line-height: 1.4;
+  color: #3d4854;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.nav-item:hover {
+  background: #f5f8fb;
+}
+.nav-icon {
+  height: 27px;
+  width: 27px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: white;
+  box-shadow: inset 0 1px 1px #ffffff70;
+}
+.nav-item > .lucide-chevron-down {
+  margin-left: auto;
+  transition: transform 0.2s;
+}
+.sub-navigation {
+  margin: 2px 0 10px 30px;
+}
+.sub-navigation .nav-item {
+  min-height: 39px;
+  font-size: 11px;
+  gap: 10px;
+}
+.sub-icon {
+  display: grid;
+  place-items: center;
+  width: 25px;
+  height: 25px;
+  background: #edf5fa;
+  color: #1487a8;
+  border-radius: 7px;
+}
+.sub-navigation .nav-item:nth-child(2) .sub-icon {
+  background: #e8eaf7;
+  color: #5366c0;
+}
+.bottom-group {
+  padding-top: 10px;
+  margin-top: 3px;
+  border-top: 1px solid #f0f3f5;
+}
+.discovery-nav {
+  margin-top: 18px;
+  padding: 13px 10px;
+  background: var(--color-brand-soft) !important;
+  color: var(--color-brand);
+  border: 1px solid #dbecff;
+  font-weight: 800;
+  gap: 10px;
+  position: relative;
+}
+.discovery-nav-icon {
+  width: 31px;
+  height: 31px;
+  display: grid;
+  place-items: center;
+  background: var(--blue);
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px color-mix(in srgb, var(--color-brand) 12%, transparent);
+}
+.discovery-nav small {
+  display: block;
+  font-size: 8px;
+  font-weight: 500;
+  color: #6e91b9;
+  margin-top: 3px;
+}
+.active-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-brand);
+  margin-left: auto;
+}
+.sidebar-foot {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 25px 19px;
+  font-size: 10px;
+  color: #a0acb7;
+}
+.mini-spark {
+  color: #a6c9ee;
+  font-size: 20px;
+  line-height: 12px;
+}
+.workspace {
+  margin-left: var(--sidebar);
+  padding: 27px 28px 0;
+  max-width: 2000px;
+}
+.topbar {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  gap: 21px;
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 20;
+}
+.search-wrap {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  position: relative;
+  background: #edf2f5;
+  border-radius: 9px;
+  padding: 0 17px;
+  height: 48px;
+  flex: 1;
+  color: #7390a8;
+}
+.search-wrap input {
+  border: 0;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  outline: 0;
+  color: #36516a;
+  font-size: 12px;
+  min-width: 0;
+}
+.search-wrap input::placeholder {
+  color: #7992aa;
+}
+.search-wrap:focus-within {
+  box-shadow: 0 0 0 2px #d0e7ff;
+}
+.search-clear {
+  display: grid;
+  place-items: center;
+  padding: 3px;
+  color: #6c879c;
+}
+.search-results {
+  position: absolute;
+  top: 55px;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 12px 40px #183f671c;
+}
+.search-results > small {
+  display: block;
+  padding: 3px 8px 9px;
+  color: #8a9eaf;
+  font-size: 10px;
+}
+.search-results > button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 11px;
+  border-radius: 7px;
+  color: #3d5d79;
+  font-size: 12px;
+  text-align: left;
+}
+.search-results > button:hover {
+  background: #edf5ff;
+}
+.search-results > p {
+  padding: 12px;
+  font-size: 12px;
+}
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.quick-action {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(140deg, #ff729c, #ef1a9e);
+  color: white;
+  box-shadow: inset 0 0 0 5px #ffffff16;
+}
+.action-separator {
+  height: 21px;
+  width: 1px;
+  background: #e2e9ef;
+  margin: 0 2px;
+}
+.profile-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 0 0 4px;
+}
+.profile-label {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 11px;
+  color: #6f8296;
+  padding: 12px 9px 12px 5px;
+}
+.content-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--right);
+  gap: 22px;
+  align-items: start;
+}
+.main-content {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 25px 27px 20px;
+  min-width: 0;
+  outline: none;
+  box-shadow: 0 5px 24px #24406103;
+}
+.right-panel {
+  background: var(--color-surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 24px #24406103;
+  position: sticky;
+  top: 18px;
+}
+.calendar {
+  padding: 10px 15px 20px;
+}
+.calendar-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3px;
+  margin-bottom: 18px;
+}
+.calendar-heading h2 {
+  margin: 0;
+  font-size: 16px;
+  letter-spacing: -0.4px;
+  font-weight: 650;
+  text-transform: capitalize;
+  outline: 0;
+  white-space: nowrap;
+}
+.calendar-heading > div {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.calendar-heading .icon-button {
+  height: 26px;
+  width: 24px;
+}
+.today-button {
+  font-size: 9px;
+  border-radius: 5px;
+  padding: 6px 8px;
+  background: #f0f4f7;
+  color: #6b8195;
+}
+.calendar-week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  gap: 2px;
+}
+.calendar-week > div {
+  min-width: 0;
+}
+.calendar-week > div > span {
+  display: block;
+  font-size: 9px;
+  color: #8698aa;
+  margin-bottom: 11px;
+}
+.calendar-week button {
+  height: 30px;
+  width: 30px;
+  font-weight: 750;
+  font-size: 12px;
+  border-radius: 50%;
+  padding: 0;
+  color: #3c556b;
+}
+.calendar-week button:hover {
+  background: #edf4fb;
+}
+.calendar-week button.is-today:not(.selected) {
+  box-shadow: inset 0 0 0 1px #ff9e83;
+}
+.calendar-week button.selected {
+  background: #ff7753;
+  color: var(--color-surface);
+  box-shadow: 0 3px 8px #ff77532e;
+}
+.journey-card {
+  position: relative;
+  min-height: 593px;
+  isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    var(--color-surface) 0%,
+    var(--color-surface) 24%,
+    #f1fdfc 60%,
+    #def5f0 100%
+  );
+  display: flex;
+  flex-direction: column;
+}
+.journey-copy {
+  padding: 18px 21px 0;
+  position: relative;
+  z-index: 2;
+}
+.journey-eyebrow {
+  font-size: 7px;
+  letter-spacing: 1.4px;
+  color: #94a9b6;
+  font-weight: 800;
+}
+.journey-copy h2 {
+  font-size: 23px;
+  line-height: 1.35;
+  letter-spacing: -0.8px;
+  margin: 11px 0 13px;
+  font-weight: 650;
+  color: #344c61;
+}
+.journey-copy p {
+  font-size: 11px;
+  line-height: 1.9;
+  color: #788b9a;
+  max-width: 230px;
+  margin-bottom: 23px;
+}
+.journey-landscape {
+  width: 100%;
+  display: block;
+  min-height: 350px;
+  margin-top: auto;
+  margin-bottom: -2px;
+}
+.appearance-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px;
+  font-size: 9px;
+  border-top: 1px solid #edf2f5;
+  color: #8b9daf;
+  background: var(--color-surface);
+}
+.appearance-button .lucide-chevron-right {
+  margin-left: auto;
+}
+.appearance-button:hover {
+  background: #f4f8fc;
+}
+.workspace-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #a8b4bf;
+  font-size: 8px;
+  padding: 19px 2px 21px;
+}
+.workspace-footer > span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.workspace-footer > span > span {
+  color: #bcc8d1;
+}
+.mobile-menu,
+.mobile-close {
+  display: none;
+}
+.drawer-shade {
+  display: none;
+}
+.compact .nav-item {
+  min-height: 36px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.compact .sub-navigation .nav-item {
+  min-height: 31px;
+}
+@media (min-width: 1650px) {
+  .workspace {
+    padding: 32px 30px 0;
+  }
+}
+@media (min-width: 1650px) {
+  .nav-item {
+    font-size: 13px;
+    min-height: 47px;
+  }
+}
+@media (min-width: 1650px) {
+  .sub-navigation .nav-item {
+    font-size: 12px;
+    min-height: 43px;
+  }
+}
+@media (min-width: 1650px) {
+  .brand-row {
+    padding: 34px 24px 37px;
+  }
+}
+@media (min-width: 1650px) {
+  .main-content {
+    padding: 30px 33px 24px;
+  }
+}
+@media (min-width: 1650px) {
+  .journey-card {
+    min-height: 660px;
+  }
+}
+@media (min-width: 1650px) {
+  .journey-copy h2 {
+    font-size: 26px;
+  }
+}
+@media (min-width: 1650px) {
+  .journey-copy p {
+    font-size: 13px;
+  }
+}
+@media (min-width: 1650px) {
+  .journey-landscape {
+    min-height: 380px;
+  }
+}
+@media (min-width: 1650px) {
+  .calendar-heading h2 {
+    font-size: 19px;
+  }
+}
+@media (min-width: 1650px) {
+  .calendar-week button {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1650px) {
+  .topbar {
+    margin-bottom: 27px;
+  }
+}
+@media (min-width: 1650px) {
+  .profile-label {
+    font-size: 12px;
+  }
+}
+@media (max-width: 1250px) {
+  .workspace {
+    padding: 23px 19px 0;
+  }
+}
+@media (max-width: 1250px) {
+  .brand-row {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+}
+@media (max-width: 1250px) {
+  .navigation {
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+}
+@media (max-width: 1250px) {
+  .nav-item {
+    font-size: 10px;
+    gap: 9px;
+  }
+}
+@media (max-width: 1250px) {
+  .nav-icon {
+    height: 25px;
+    width: 25px;
+  }
+}
+@media (max-width: 1250px) {
+  .nav-item small {
+    font-size: 7px;
+  }
+}
+@media (max-width: 1250px) {
+  .content-layout {
+    gap: 16px;
+  }
+}
+@media (max-width: 1250px) {
+  .main-content {
+    padding: 20px 19px;
+  }
+}
+@media (max-width: 1250px) {
+  .topbar {
+    gap: 12px;
+  }
+}
+@media (max-width: 1250px) {
+  .top-actions {
+    gap: 5px;
+  }
+}
+@media (max-width: 1250px) {
+  .profile-label {
+    display: none;
+  }
+}
+@media (max-width: 1250px) {
+  .journey-copy {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+@media (max-width: 1250px) {
+  .calendar {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+@media (max-width: 1250px) {
+  .calendar-heading h2 {
+    font-size: 14px;
+  }
+}
+@media (max-width: 1250px) {
+  .calendar-week button {
+    width: 28px;
+    height: 28px;
+  }
+}
+@media (max-width: 1250px) {
+  .journey-card {
+    min-height: 572px;
+  }
+}
+@media (max-width: 1080px) {
+  .content-layout {
+    gap: 13px;
+  }
+}
+@media (max-width: 1080px) {
+  .workspace {
+    padding: 20px 14px 0;
+  }
+}
+@media (max-width: 1080px) {
+  .calendar-heading h2 {
+    font-size: 13px;
+  }
+}
+@media (max-width: 1080px) {
+  .calendar-heading .icon-button {
+    width: 19px;
+  }
+}
+@media (max-width: 1080px) {
+  .calendar-week button {
+    height: 26px;
+    width: 26px;
+    font-size: 11px;
+  }
+}
+@media (max-width: 1080px) {
+  .journey-copy h2 {
+    font-size: 22px;
+  }
+}
+@media (max-width: 1080px) {
+  .main-content {
+    padding: 20px 15px;
+  }
+}
+@media (max-width: 1080px) {
+  .sidebar-foot {
+    padding-left: 20px;
+  }
+}
+@media (max-width: 940px) {
+  .right-panel {
+    display: none;
+  }
+}
+@media (max-width: 940px) {
+  .content-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 940px) {
+  .right-panel.is-open {
+    display: block;
+    position: fixed;
+    inset: 15px 15px 15px auto;
+    width: 285px;
+    overflow: auto;
+    z-index: 50;
+    top: 15px;
+  }
+}
+@media (max-width: 940px) {
+  .right-panel.is-open .journey-card {
+    min-height: 480px;
+  }
+}
+@media (max-width: 940px) {
+  .right-panel.is-open .journey-landscape {
+    min-height: 280px;
+  }
+}
+@media (max-width: 940px) {
+  .drawer-shade {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: #17354c4d;
+    z-index: 40;
+    backdrop-filter: blur(2px);
+  }
+}
+@media (max-width: 940px) {
+  .main-content {
+    padding: 23px;
+  }
+}
+@media (max-width: 940px) {
+  .workspace {
+    padding: 20px;
+  }
+}
+@media (max-width: 940px) {
+  .workspace-footer > span:last-child {
+    display: none;
+  }
+}
+@media (max-width: 940px) {
+  .topbar {
+    margin-bottom: 22px;
+  }
+}
+@media (max-width: 940px) {
+  .action-separator {
+    display: none;
+  }
+}
+@media (max-width: 940px) {
+  .quick-action {
+    height: 38px;
+    width: 38px;
+  }
+}
+@media (max-width: 940px) {
+  .profile-button {
+    padding: 0;
+  }
+}
+@media (max-width: 940px) {
+  .top-actions {
+    gap: 5px;
+  }
+}
+@media (max-width: 940px) {
+  .search-wrap {
+    padding: 0 12px;
+    gap: 8px;
+  }
+}
+@media (max-width: 940px) {
+  .search-wrap input {
+    font-size: 10px;
+  }
+}
+@media (max-width: 940px) {
+  .topbar {
+    gap: 12px;
+  }
+}
+@media (max-width: 720px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.2s;
+    z-index: 50;
+    width: 252px;
+  }
+}
+@media (max-width: 720px) {
+  .sidebar.is-open {
+    transform: translateX(0);
+  }
+}
+@media (max-width: 720px) {
+  .workspace {
+    margin-left: 0;
+    padding: 17px;
+  }
+}
+@media (max-width: 720px) {
+  .mobile-menu,
+  .mobile-close {
+    display: inline-flex;
+  }
+}
+@media (max-width: 720px) {
+  .brand-row {
+    padding: 22px 19px 23px;
+    min-height: 97px;
+  }
+}
+@media (max-width: 720px) {
+  .navigation {
+    padding: 7px 12px 18px;
+  }
+}
+@media (max-width: 720px) {
+  .nav-item {
+    font-size: 12px;
+    min-height: 43px;
+    gap: 12px;
+  }
+}
+@media (max-width: 720px) {
+  .sub-navigation .nav-item {
+    font-size: 11px;
+  }
+}
+@media (max-width: 720px) {
+  .discovery-nav small {
+    font-size: 8px;
+  }
+}
+@media (max-width: 720px) {
+  .topbar {
+    gap: 10px;
+    height: 43px;
+    margin-bottom: 19px;
+  }
+}
+@media (max-width: 720px) {
+  .search-wrap {
+    height: 42px;
+  }
+}
+@media (max-width: 720px) {
+  .quick-action {
+    display: none;
+  }
+}
+@media (max-width: 720px) {
+  .top-actions {
+    gap: 5px;
+  }
+}
+@media (max-width: 720px) {
+  .profile-button .avatar {
+    height: 36px;
+    width: 36px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 720px) {
+  .top-actions > .icon-button.soft:nth-of-type(3) {
+    display: none;
+  }
+}
+@media (max-width: 720px) {
+  .main-content {
+    padding: 20px;
+    border-radius: 12px;
+  }
+}
+@media (max-width: 720px) {
+  .sidebar-foot {
+    padding-left: 23px;
+  }
+}
+@media (max-width: 720px) {
+  .workspace-footer {
+    padding-top: 16px;
+  }
+}
+@media (max-width: 720px) {
+  .calendar-heading h2 {
+    font-size: 16px;
+  }
+}
+@media (max-width: 720px) {
+  .calendar-week button {
+    width: 30px;
+    height: 30px;
+  }
+}
+@media (max-width: 720px) {
+  .journey-card .journey-copy h2 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 480px) {
+  .workspace {
+    padding: 12px;
+  }
+}
+@media (max-width: 480px) {
+  .topbar {
+    gap: 7px;
+  }
+}
+@media (max-width: 480px) {
+  .search-wrap input {
+    font-size: 9px;
+  }
+}
+@media (max-width: 480px) {
+  .search-wrap {
+    padding: 0 9px;
+    gap: 7px;
+  }
+}
+@media (max-width: 480px) {
+  .search-wrap > svg {
+    width: 17px;
+  }
+}
+@media (max-width: 480px) {
+  .top-actions {
+    gap: 3px;
+  }
+}
+@media (max-width: 480px) {
+  .top-actions > button[aria-label='Bildirimler'] {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  .profile-button .avatar {
+    width: 31px;
+    height: 31px;
+    font-size: 13px;
+    border-width: 2px;
+  }
+}
+@media (max-width: 480px) {
+  .mobile-menu {
+    width: 27px;
+  }
+}
+@media (max-width: 480px) {
+  .main-content {
+    padding: 18px 15px;
+  }
+}
+@media (max-width: 480px) {
+  .workspace-footer {
+    font-size: 7px;
+  }
+}
+
+/* Keep navigation compact without displaying a scrollbar. Short screens still scroll. */
+.sidebar .brand-row {
+  flex-shrink: 0;
+  min-height: 82px;
+  padding: 18px 23px 16px;
+}
+.sidebar .navigation {
+  min-height: 0;
+  padding-top: 0;
+  padding-bottom: 8px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.sidebar .navigation::-webkit-scrollbar {
+  display: none;
+}
+.sidebar .nav-item {
+  min-height: 40px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.sidebar .sub-navigation {
+  margin-bottom: 4px;
+}
+.sidebar .sub-navigation .nav-item {
+  min-height: 31px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+.sidebar .bottom-group {
+  padding-top: 6px;
+}
+.sidebar .discovery-nav {
+  margin-top: 8px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+.sidebar .sidebar-foot {
+  flex-shrink: 0;
+  padding-top: 7px;
+  padding-bottom: 10px;
+}
+@media (max-height: 760px) {
+  .sidebar .brand-row {
+    min-height: 70px;
+    padding-top: 12px;
+    padding-bottom: 10px;
+  }
+  .sidebar .nav-item {
+    min-height: 35px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  .sidebar .sub-navigation .nav-item {
+    min-height: 28px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+}
+
+/* Align the header closely with the connection strip and page content. */
+.app .workspace {
+  padding-top: 12px;
+}
+.workspace .topbar {
+  margin-bottom: 14px;
+}
+.topbar .mobile-menu {
+  display: none;
+}
+@media (max-width: 720px) {
+  .topbar .mobile-menu {
+    display: inline-flex;
+  }
+  .app .workspace {
+    padding-top: 10px;
+  }
+  .workspace .topbar {
+    margin-bottom: 12px;
+  }
+}

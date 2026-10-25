@@ -1,0 +1,69 @@
+spring:
+  application:
+    name: doping-kesif-backend
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+        default_schema: kesif
+  flyway:
+    enabled: true
+    default-schema: kesif
+    schemas: kesif
+    locations: classpath:db/migration
+    clean-disabled: true
+  mvc:
+    problemdetails:
+      enabled: true
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+server:
+  port: ${SERVER_PORT:8080}
+  error:
+    include-message: never
+    include-stacktrace: never
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: never
+springdoc:
+  api-docs:
+    enabled: false
+  swagger-ui:
+    enabled: false
+kesif:
+  rewards:
+    enabled: ${KESIF_REWARDS_ENABLED:false}
+    completion-xp: ${KESIF_COMPLETION_XP:}
+    correct-answer-xp: ${KESIF_CORRECT_ANSWER_XP:}
+    collection-completion-xp: ${KESIF_COLLECTION_COMPLETION_XP:}
+    collection-mapping: ${KESIF_COLLECTION_MAPPING:}
+  game:
+    question-duration: ${KESIF_QUESTION_DURATION:}
+    reveal-duration: ${KESIF_REVEAL_DURATION:}
+  security:
+    issuer: ${JWT_ISSUER:}
+    audience: ${JWT_AUDIENCE:}
+    jwk-set-uri: ${JWT_JWKS_URI:}
+    roles-claim: ${JWT_ROLES_CLAIM:roles}
+  web:
+    allowed-origins: ${KESIF_ALLOWED_ORIGINS:}
+  rooms:
+    ttl: ${KESIF_ROOM_TTL:}
+    invitation-ttl: ${KESIF_INVITATION_TTL:}
+    code-secret: ${ROOM_CODE_SECRET:}

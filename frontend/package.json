@@ -1,0 +1,38 @@
+{
+  "name": "doping-kesif-frontend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5173 --strictPort",
+    "build": "tsc -b \u0026\u0026 vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4173 --strictPort",
+    "test": "vitest run",
+    "typecheck": "tsc -b",
+    "check": "npm run format:check \u0026\u0026 npm run test \u0026\u0026 npm run build",
+    "format": "prettier --write src scripts vite.config.ts vitest.config.ts tsconfig.json index.html package.json",
+    "format:check": "prettier --check src scripts vite.config.ts vitest.config.ts tsconfig.json index.html package.json",
+    "smoke:catalog": "node scripts/smoke-catalog.mjs"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.104.5",
+    "lucide-react": "^0.468.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-router-dom": "^7.18.4",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.8",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "jsdom": "^30.1.3",
+    "prettier": "^3.9.10",
+    "typescript": "^5.9.0",
+    "vite": "8.3.5",
+    "vitest": "^5.0.5"
+  }
+}

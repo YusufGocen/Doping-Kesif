@@ -1,0 +1,99 @@
+:root {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-page);
+  font-synthesis: none;
+  font-weight: 500;
+  font-size: 14px;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button,
+input {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+button,
+a,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  color: inherit;
+}
+button {
+  border: 0;
+  background: none;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 4px;
+}
+button:disabled {
+  cursor: default;
+}
+svg {
+  flex-shrink: 0;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+button {
+  transition:
+    background 0.18s,
+    box-shadow 0.18s,
+    transform 0.18s;
+}
+button:hover {
+  filter: brightness(0.98);
+}
+h1 {
+  font-size: 22px;
+  letter-spacing: -0.8px;
+  color: #163550;
+  line-height: 1.2;
+  font-weight: 800;
+}
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.route-state {
+  padding: 48px 24px;
+  max-width: 640px;
+  margin: auto;
+}
+.route-state p {
+  margin: 18px 0;
+  line-height: 1.8;
+}
+.primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
