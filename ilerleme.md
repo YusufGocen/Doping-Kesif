@@ -669,3 +669,8 @@ Kullanıcının çalıştırma isteğinde mevcut Vite sunucusunun açık olduğu
 - Yüklenecek kaynaklarda özel anahtar/token ve uzun sabit parola taramasında bulgu yok. README yerel bağlantıları doğrulandı. Frontend 16 dosyada 80 test, biçim kontrolü, TypeScript ve build başarılı. Backend kodu değişmedi; backend testleri bu hazırlıkta tekrar çalıştırılmadı.
 - İlk commit ve main dalına gönderim bu kayıtla hazırlanıyor; uzak commit doğrulaması işlem sonunda kontrol edilecek.
 
+
+### 2026-10-25 - GitHub push status
+- Initial commit: 9d8895c. 322 source/documentation files, no local logs, backups or build output.
+- Remote repository is readable and empty. Push is pending because the managed session cannot use Windows credential storage; device authentication also failed in the Windows security provider. No credentials were saved.
+- Next step: run git push -u origin main in the user VS Code terminal and complete GitHub sign-in.
